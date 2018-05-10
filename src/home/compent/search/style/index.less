@@ -1,0 +1,32 @@
+@import '../../../../style/variable.less';
+@import '../../../../style/icon.less';
+@search-bar-fill: #efeff4;
+@search-bar-height: 44px;
+@search-bar-input-height: 37px;
+@search-bar-font-size: 15px;
+@search-color-icon: #bbb; // input search icon 的背景色
+.kiki-searchBar {
+  @bgColor: #f0f0ee;
+  position: relative;
+  background-color: @bgColor;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+  .searchBar-wapper {
+    display: flex;
+    align-items: center;
+  }
+  .searchBar-input {
+    height: @search-bar-input-height;
+    border: @border-none;
+    background-color: transparent;
+    opacity: 1;
+    overflow: hidden;
+    flex: auto;
+    font-size: 15px;
+  }
+  .icon-Search {
+    color: #7f7f7f;
+    padding: 8px;
+  }
+}

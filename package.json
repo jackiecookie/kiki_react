@@ -1,0 +1,44 @@
+{
+  "name": "kiki_react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-loadable": "^5.4.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts-ts": "2.15.1",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.3",
+    "@types/jest": "^22.2.3",
+    "@types/node": "^10.0.6",
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
+    "@types/react-redux": "^6.0.0",
+    "@types/react-router-dom": "^4.2.6",
+    "@types/remote-redux-devtools": "^0.5.2",
+    "classnames": "^2.2.5",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.0",
+    "prettier": "^1.12.1",
+    "remote-redux-devtools": "^0.5.12",
+    "typescript": "^2.8.3"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css,tsx,less}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  }
+}

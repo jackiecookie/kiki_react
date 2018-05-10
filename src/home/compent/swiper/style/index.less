@@ -1,0 +1,47 @@
+.swiper_section {
+  margin: 20px;
+  .headTitle {
+    padding-bottom: 20px;
+  }
+}
+
+.kiki_swiper {
+  display: block;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1px;
+  white-space: nowrap;
+  font-size: 0;
+  .title_Wapper {
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 10px;
+    color: #383835;
+  }
+  &.normal {
+    .swiper_img {
+      width: 185px;
+      height: 150px;
+    }
+  }
+  &.big {
+    .swiper_img {
+      width: 183px;
+      height: 266px;
+    }
+  }
+  .swiper_img {
+    display: block;
+    position: relative;
+    .kiki_swiper_authName {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: white;
+      font-weight: 200;
+    }
+  }
+  .kiki_swiper_title {
+    margin: 15px 0px 20px 0px;
+  }
+}
