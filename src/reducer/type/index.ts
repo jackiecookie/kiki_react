@@ -1,7 +1,7 @@
-import {CartType} from 'type/cart'
+import { CartType } from 'type/cart';
 
 export type CartStoreState = CartType;
 
-export type StoreState = {
-  carts:CartType
-};
+export interface StoreState {
+  carts: CartType;
+}

@@ -1,7 +1,7 @@
-export type CartType = [MaterialType]
+export type CartType = MaterialType[];
 
-export type MaterialType = {
-  name: string,
-  size: string,
-  id :string
+export interface MaterialType {
+  name: string;
+  size: string;
+  id: string;
 }

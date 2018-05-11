@@ -1,5 +1,3 @@
-//@flow
-
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 export interface Props {
@@ -10,7 +8,7 @@ export interface Props {
 }
 
 export function ReciptItem(props: Props) {
-  let divStyle = {
+  const divStyle = {
     backgroundImage: `url(${props.img})`
   };
   return (

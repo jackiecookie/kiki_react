@@ -22,7 +22,9 @@
       "react",
       "react-dom",
       "react-router-dom",
-      "remote-redux-devtools"
+      "remote-redux-devtools",
+      "node",
+      "react-loadable"
     ],
     "paths": {
       "*": ["src/*"]

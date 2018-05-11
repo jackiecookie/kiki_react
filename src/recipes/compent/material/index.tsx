@@ -1,5 +1,5 @@
-import { connect, Dispatch } from 'react-redux';
 import * as React from 'react';
+import { connect, Dispatch } from 'react-redux';
 import { addCartAction, AddCartAction } from 'reducer/action/cart';
 import { CartType } from 'type/cart';
 import { StoreState } from 'reducer/type/index';
@@ -12,7 +12,7 @@ interface Props {
 
 class MaterialItem extends React.Component<Props> {
   render() {
-    let { material, addCartClick } = this.props;
+    const { material, addCartClick } = this.props;
     return (
       <section className="materialSection">
         <div className="materialsubTitle">
@@ -37,7 +37,7 @@ interface MaterialProps {
 }
 
 const mapStateToProps = ({ carts }: StoreState) => {
-  return { carts: carts };
+  return { carts };
 };
 
 const mapDispatchToProps = (

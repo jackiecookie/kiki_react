@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
 import * as React from 'react';
-import { CartType } from 'type/cart';
+import { connect } from 'react-redux';
 import { StoreState } from 'reducer/type';
+import { CartType } from 'type/cart';
 
 interface Props {
   carts: CartType;
@@ -9,15 +9,13 @@ interface Props {
 
 class CartItem extends React.Component<Props> {
   render() {
-    var { carts } = this.props;
+    const { carts } = this.props;
     return <i className="icon icon-lanzi" data-cart={carts.length} />;
   }
 }
 
 const mapStateToProps = ({ carts }: StoreState) => {
-  return {
-    carts: carts
-  };
+  return { carts };
 };
 
 const Cart = connect(mapStateToProps)(CartItem);

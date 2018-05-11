@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Swiper from './compent/swiper';
-import * as Search from './compent/search';
 import Cart from './compent/cart';
+import * as Search from './compent/search';
+import Swiper from './compent/swiper';
 
 class Home extends React.Component {
   state = {};

@@ -1,10 +1,23 @@
 import * as React from 'react';
 import { Route, Switch, Router } from 'react-router-dom';
-import Home from './home';
-import { Detail as RecipeDetail } from './recipes/detail';
+import * as Loadable from 'react-loadable';
 import createStoreWithSaga from './reducer/creator';
 import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/createBrowserHistory';
+
+const Home = Loadable({
+  loader: () => import('./home'),
+  loading() {
+    return <div>Loading...</div>;
+  }
+});
+
+const RecipeDetail = Loadable({
+  loader: () => import('./recipes/detail'),
+  loading() {
+    return <div>Loading...</div>;
+  }
+});
 
 const customHistory = createBrowserHistory();
 

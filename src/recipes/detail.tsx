@@ -4,7 +4,7 @@ import './style/detail.less';
 import Material from './compent/material';
 import { CartType } from 'type/cart';
 
-type DetailDataType = {
+interface DetailDataType {
   headImg: string;
   name: string;
   author: {
@@ -12,33 +12,19 @@ type DetailDataType = {
     name: string;
   };
   material: CartType;
-  step: Array<any>;
-};
+  step: any[];
+}
 
-interface Props {}
 interface State {
   detailData: DetailDataType;
 }
-export class Detail extends React.Component<Props, State> {
-  HeadIcon: Array<HTMLElement> = [];
-  constructor(props: Props) {
+export default class Detail extends React.Component<object, State> {
+  HeadIcon: HTMLElement[] = [];
+  constructor(props: object) {
     super(props);
-    //this.HeadIcon = [];
+    // this.HeadIcon = [];
     this.setHeadIconRef = this.setHeadIconRef.bind(this);
   }
-  // state = {
-  //   detailData: {
-  //     headImg: null,
-  //     author: {
-  //       avatar: null,
-  //       name: null
-  //     },
-  //     material: [],
-  //     step: []
-  //   },
-  //   fade: 0,
-  //   lastScrollY: 0
-  // };
   async componentDidMount() {
     window.addEventListener('scroll', this.handleScroll.bind(this));
     const response = await axios.get(
@@ -55,15 +41,17 @@ export class Detail extends React.Component<Props, State> {
     if (lastScrollY > 0) {
       let alpha = lastScrollY / 330;
       alpha = alpha > 1 ? 1 : alpha;
-      let recipeHeader = this.refs.recipeHeader as HTMLElement;
+      const recipeHeader = this.refs.recipeHeader as HTMLElement;
       if (recipeHeader && recipeHeader.style) {
-        recipeHeader.style.backgroundColor = `rgba(255, 255, 255, ${alpha})`; //color(`rgba(255, 255, 255, ${alpha})`).cssa();
+        // color(`rgba(255, 255, 255, ${alpha})`).cssa();
+        recipeHeader.style.backgroundColor = `rgba(255, 255, 255, ${alpha})`;
       }
       this.HeadIcon.map(icon => {
         if (alpha < 0.2) {
           icon.style.color = ``;
         } else {
-          icon.style.color = `rgba(0, 0, 0, ${alpha})`; //color(`rgba(0, 0, 0, ${alpha})`).cssa()
+          // color(`rgba(0, 0, 0, ${alpha})`).cssa()
+          icon.style.color = `rgba(0, 0, 0, ${alpha})`;
         }
         return true;
       });
