@@ -1,6 +1,6 @@
+import * as classnames from 'classnames';
 import * as React from 'react';
 import './style/index.less';
-import * as classnames from 'classnames';
 
 export interface Props {
   placeholder: string;
@@ -12,7 +12,7 @@ export interface Props {
 export class SearchBar extends React.Component<Props> {
   render() {
     const { placeholder, maxLength, className, onSubmit } = this.props;
-    let searchBarClass = classnames('kiki-searchBar', className);
+    const searchBarClass = classnames('kiki-searchBar', className);
     return (
       <form className={searchBarClass} onSubmit={onSubmit} action="#">
         <div className="searchBar-wapper">
