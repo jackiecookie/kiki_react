@@ -158,6 +158,7 @@
     "member-access": [
       true,
       "no-public"
-    ]
+    ],
+    "no-unused-expressions": ["error", {"allowTaggedTemplates": true}]
   }
 }

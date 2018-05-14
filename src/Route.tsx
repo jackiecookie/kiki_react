@@ -4,9 +4,11 @@ import * as Loadable from 'react-loadable';
 import createStoreWithSaga from './reducer/creator';
 import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/createBrowserHistory';
-import injectGlobalCss from './style/index';
+import injectGlobalCss from './style/index.style';
+import injectGlobalIcon from './style/icon.style';
 
 injectGlobalCss();
+injectGlobalIcon();
 const Home = Loadable({
   loader: () => import('./home'),
   loading() {
