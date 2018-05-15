@@ -1,6 +1,9 @@
 import { injectGlobal } from 'styled-components';
+import styledNormalize from 'styled-normalize';
+
 export default function injectGlobalCss() {
   return injectGlobal`
+  ${styledNormalize}
   *,
   *:before,
   *:after {

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { StoreState } from 'reducer/type';
 import { CartType } from 'type/cart';
+import Icon, { IconEnum } from 'component/icon';
 
 interface Props {
   carts: CartType;
@@ -9,8 +10,8 @@ interface Props {
 
 class CartItem extends React.Component<Props> {
   render() {
-    const { carts } = this.props;
-    return <i className="icon icon-lanzi" data-cart={carts.length} />;
+    // const { carts } = this.props;
+    return <Icon icon={IconEnum.lanzi} />;
   }
 }
 
