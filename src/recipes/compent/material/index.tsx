@@ -3,7 +3,42 @@ import { connect, Dispatch } from 'react-redux';
 import { addCartAction, AddCartAction } from 'reducer/action/cart';
 import { CartType } from 'type/cart';
 import { StoreState } from 'reducer/type/index';
-import './style.less';
+import SubTitle from '../share/subTitle';
+import styled, { css } from 'styled-components';
+
+const SubTitleExten = SubTitle.extend`
+  flex: 1;
+`;
+
+const MaterialSection = styled.section`
+  font-size: 17px;
+`;
+
+const MaterialsubTitle = styled.div`
+  display: flex;
+`;
+
+const FlotLeft = css`
+  float: left;
+`;
+
+const Ingredient = styled.span`
+  ${FlotLeft} width: 50%;
+  padding-right: 37px;
+`;
+
+const Size = styled.span`
+  ${FlotLeft} width: 40%;
+`;
+
+const Li = styled.li`
+  overflow: hidden;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 11px 0;
+  :first-child {
+    border-top: 1px solid #ececea;
+  }
+`;
 
 interface Props {
   material: CartType;
@@ -14,20 +49,20 @@ class MaterialItem extends React.Component<Props> {
   render() {
     const { material, addCartClick } = this.props;
     return (
-      <section className="materialSection">
-        <div className="materialsubTitle">
-          <h2 className="subTitle">用料</h2>
+      <MaterialSection>
+        <MaterialsubTitle>
+          <SubTitleExten>用料</SubTitleExten>
           <span onClick={addCartClick}>丢进菜篮</span>
-        </div>
+        </MaterialsubTitle>
         <ul className="plain">
           {material.map((item, index) => (
-            <li key={index}>
-              <span className="ingredient">{item.name}</span>
-              <span className="size">{item.size}</span>
-            </li>
+            <Li key={index}>
+              <Ingredient>{item.name}</Ingredient>
+              <Size>{item.size}</Size>
+            </Li>
           ))}
         </ul>
-      </section>
+      </MaterialSection>
     );
   }
 }
